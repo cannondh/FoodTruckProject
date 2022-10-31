@@ -118,7 +118,7 @@ public class FoodTruckApp {
 				}
 				
 				break;
-			case "4":
+			case "4": case "quit": case "Quit":
 				System.out.println("Goodbye!");
 				menu = true;
 
