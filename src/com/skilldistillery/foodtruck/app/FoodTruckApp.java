@@ -88,6 +88,11 @@ public class FoodTruckApp {
 				// );
 				// }
 				for (int index = 0; index < parked.length; index++) {
+					if(parked[index].getName() == null) {
+						continue;
+					} if (parked[index].getFoodType()== null) {
+						continue;
+					}
 					System.out.println(parked[index].toString());
 
 				}
