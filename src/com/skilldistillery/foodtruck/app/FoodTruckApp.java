@@ -11,19 +11,18 @@ public class FoodTruckApp {
 	public static void main(String[] args) {
 
 		Scanner scanner = new Scanner(System.in);
-		
-		FoodTruck [] parked = new FoodTruck[5];
-		
 
-		parked[0]  = new FoodTruck();
+		FoodTruck[] parked = new FoodTruck[5];
+
+		parked[0] = new FoodTruck();
 
 		parked[1] = new FoodTruck();
 
-		parked [2] = new FoodTruck();
+		parked[2] = new FoodTruck();
 
-		parked [3] = new FoodTruck();
+		parked[3] = new FoodTruck();
 
-		parked [4] = new FoodTruck();
+		parked[4] = new FoodTruck();
 
 		String[] foodTruckNames = new String[5];
 
@@ -31,35 +30,38 @@ public class FoodTruckApp {
 
 		int[] foodTruckRatings = new int[5];
 
-		foodTruckNames[0] = parked[0].setName(scanner);
+		
 
-		foodTruckNames[1] = parked[1].setName(scanner);
+		for (int index = 0; index < foodTruckRatings.length; index++) {
+			
+			
+			System.out.println("What is the name of the food truck?");
+			String input = scanner.nextLine();
+			
 
-		foodTruckNames[2] = parked[2].setName(scanner);
+			
+			if (input.equals("quit")) {
+				break;
+			}
 
-		foodTruckNames[3] = parked[3].setName(scanner);
 
-		foodTruckNames[4] = parked[4].setName(scanner);
+			System.out.println("What is the food type the truck sells?");
+			foodTruckTypes[index] = scanner.nextLine();
 
-		foodTruckTypes[0] = parked[0].setFoodType(scanner);
+			System.out.println("What would you rate the food between 1 and 5?");
+			foodTruckRatings[index] = scanner.nextInt();
 
-		foodTruckTypes[1] = parked[1].setFoodType(scanner);
+		}
 
-		foodTruckTypes[2] = parked[2].setFoodType(scanner);
-
-		foodTruckTypes[3] = parked[3].setFoodType(scanner);
-
-		foodTruckTypes[4] = parked[4].setFoodType(scanner);
-
-		foodTruckRatings[0] = parked[0].setRating(scanner);
-
-		foodTruckRatings[1] = parked[1].setRating(scanner);
-
-		foodTruckRatings[2] = parked[2].setRating(scanner);
-
-		foodTruckRatings[3] = parked[3].setRating(scanner);
-
-		foodTruckRatings[4] = parked[4].setRating(scanner);
+		for(int index = 0; index < foodTruckNames.length; index++) {
+			parked[index].setName(foodTruckNames[index]);
+			
+			parked[index].setFoodType(foodTruckTypes[index]);
+			
+			parked[index].setRating(foodTruckRatings[index]);
+			
+		}
+		
 
 		boolean menu = false;
 
@@ -68,24 +70,8 @@ public class FoodTruckApp {
 		int length = foodTruckRatings.length;
 
 		int max = 0;
-
-		for (int index = 0; index < foodTruckRatings.length; index++) {
-			
-			if (scanner.equals("quit")) {
-				continue;
-			}
-
-			System.out.println("What is the name of the food truck?");
-
-			foodTruckNames[index] = scanner.next();
-
-			System.out.println("What is the food type the truck sells?");
-			foodTruckTypes[index] = scanner.next();
-
-			System.out.println("What would you rate the food?");
-			foodTruckRatings[index] = scanner.nextInt();
-
-		}
+		
+		int max2 = 0;
 
 		do {
 
@@ -98,15 +84,15 @@ public class FoodTruckApp {
 
 			switch (select) {
 			case "1":
-				//for (int index = 0; index < foodTruckNames.length; index++) {
-				//	System.out.print(foodTruckNames[index] + "  " + foodTruckFoods[index] + " " + );
-				//}
-				for (int index = 0; index <parked.length; index++ ) {
+				// for (int index = 0; index < foodTruckNames.length; index++) {
+				// System.out.print(foodTruckNames[index] + " " + foodTruckFoods[index] + " " +
+				// );
+				// }
+				for (int index = 0; index < parked.length; index++) {
 					System.out.println(parked[index].toString());
-					
-					
+
 				}
-				
+
 				break;
 
 			case "2":
@@ -118,14 +104,15 @@ public class FoodTruckApp {
 				System.out.println("The average rating is: " + average);
 				break;
 			case "3":
-				for (int index = 0; index < foodTruckRatings.length; index++) {
-					max = foodTruckRatings[0];
-					if (foodTruckRatings[index] > max) {
-						max  = foodTruckRatings[index];
+				for (int index = 0; index< parked.length; index++) {
+					max =  parked[0].getRating();
+					if (parked[index].getRating() > max) {
+						max = parked[index].getRating();
 					}
 
 				}
-				System.out.println("The highest rating is: " + max);
+				System.out.println("The highest rating is: " + parked[max].getRating());
+			//	System.out.println(parked[].toString());
 				break;
 			case "4":
 				System.out.println("Goodbye!");

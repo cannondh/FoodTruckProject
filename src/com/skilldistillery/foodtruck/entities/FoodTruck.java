@@ -18,6 +18,13 @@ public class FoodTruck {
 	
 	
 	public FoodTruck() {
+		id = nextTruckId;
+		
+				
+		
+		
+		nextTruckId++;
+		
 		
 	}
 	
@@ -26,30 +33,45 @@ public class FoodTruck {
 	public static int getNextTruckId() {
 		return nextTruckId;
 	}
-	public static void setNextTruckId(int nextTruckId) {
-		FoodTruck.nextTruckId = nextTruckId;
-	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+	
+
+	
 	public String getName() {
 		return name;
 	}
-	public String setName(Scanner name) {
-		return this.name;
+
+
+
+	public void setName(String name) {
+		this.name = name;
 	}
+
+
+
 	public String getFoodType() {
 		return foodType;
 	}
-	public String setFoodType(Scanner foodType) {
-		return this.foodType;
+
+
+
+	public void setFoodType(String foodType) {
+		this.foodType = foodType;
 	}
+
+
+
 	public int getRating() {
 		return rating;
 	}
+
+
+
+	public void setRating(int rating) {
+		this.rating = rating;
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "FoodTruck [name=" + name +  ", foodType=" + this.foodType + ", rating=" + this.rating +   "]";
@@ -57,7 +79,7 @@ public class FoodTruck {
 
 
 
-	public int setRating(Scanner rating) {
+	public int setRating(String rating) {
 		return this.rating ;
 	}
 	
