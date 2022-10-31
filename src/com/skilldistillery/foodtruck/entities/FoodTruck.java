@@ -50,6 +50,13 @@ public class FoodTruck {
 	public int getRating() {
 		return rating;
 	}
+	@Override
+	public String toString() {
+		return "FoodTruck [name=" + name +  ", foodType=" + this.foodType + ", rating=" + this.rating +   "]";
+	}
+
+
+
 	public int setRating(Scanner rating) {
 		return this.rating ;
 	}

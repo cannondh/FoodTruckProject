@@ -11,16 +11,19 @@ public class FoodTruckApp {
 	public static void main(String[] args) {
 
 		Scanner scanner = new Scanner(System.in);
+		
+		FoodTruck [] parked = new FoodTruck[5];
+		
 
-		FoodTruck foodTruck1 = new FoodTruck();
+		parked[0]  = new FoodTruck();
 
-		FoodTruck foodTruck2 = new FoodTruck();
+		parked[1] = new FoodTruck();
 
-		FoodTruck foodTruck3 = new FoodTruck();
+		parked [2] = new FoodTruck();
 
-		FoodTruck foodTruck4 = new FoodTruck();
+		parked [3] = new FoodTruck();
 
-		FoodTruck foodTruck5 = new FoodTruck();
+		parked [4] = new FoodTruck();
 
 		String[] foodTruckNames = new String[5];
 
@@ -28,35 +31,35 @@ public class FoodTruckApp {
 
 		int[] foodTruckRatings = new int[5];
 
-		foodTruckNames[0] = foodTruck1.setName(scanner);
+		foodTruckNames[0] = parked[0].setName(scanner);
 
-		foodTruckNames[1] = foodTruck2.setName(scanner);
+		foodTruckNames[1] = parked[1].setName(scanner);
 
-		foodTruckNames[2] = foodTruck3.setName(scanner);
+		foodTruckNames[2] = parked[2].setName(scanner);
 
-		foodTruckNames[3] = foodTruck4.setName(scanner);
+		foodTruckNames[3] = parked[3].setName(scanner);
 
-		foodTruckNames[4] = foodTruck5.setName(scanner);
+		foodTruckNames[4] = parked[4].setName(scanner);
 
-		foodTruckTypes[0] = foodTruck1.setFoodType(scanner);
+		foodTruckTypes[0] = parked[0].setFoodType(scanner);
 
-		foodTruckTypes[1] = foodTruck2.setFoodType(scanner);
+		foodTruckTypes[1] = parked[1].setFoodType(scanner);
 
-		foodTruckTypes[2] = foodTruck3.setFoodType(scanner);
+		foodTruckTypes[2] = parked[2].setFoodType(scanner);
 
-		foodTruckTypes[3] = foodTruck4.setFoodType(scanner);
+		foodTruckTypes[3] = parked[3].setFoodType(scanner);
 
-		foodTruckTypes[4] = foodTruck5.setFoodType(scanner);
+		foodTruckTypes[4] = parked[4].setFoodType(scanner);
 
-		foodTruckRatings[0] = foodTruck1.setRating(scanner);
+		foodTruckRatings[0] = parked[0].setRating(scanner);
 
-		foodTruckRatings[1] = foodTruck1.setRating(scanner);
+		foodTruckRatings[1] = parked[1].setRating(scanner);
 
-		foodTruckRatings[2] = foodTruck1.setRating(scanner);
+		foodTruckRatings[2] = parked[2].setRating(scanner);
 
-		foodTruckRatings[3] = foodTruck1.setRating(scanner);
+		foodTruckRatings[3] = parked[3].setRating(scanner);
 
-		foodTruckRatings[4] = foodTruck1.setRating(scanner);
+		foodTruckRatings[4] = parked[4].setRating(scanner);
 
 		boolean menu = false;
 
@@ -95,9 +98,15 @@ public class FoodTruckApp {
 
 			switch (select) {
 			case "1":
-				for (int index = 0; index < foodTruckNames.length; index++) {
-					System.out.print(foodTruckNames[index] + "  ");
+				//for (int index = 0; index < foodTruckNames.length; index++) {
+				//	System.out.print(foodTruckNames[index] + "  " + foodTruckFoods[index] + " " + );
+				//}
+				for (int index = 0; index <parked.length; index++ ) {
+					System.out.println(parked[index].toString());
+					
+					
 				}
+				
 				break;
 
 			case "2":
@@ -112,7 +121,7 @@ public class FoodTruckApp {
 				for (int index = 0; index < foodTruckRatings.length; index++) {
 					max = foodTruckRatings[0];
 					if (foodTruckRatings[index] > max) {
-						max = foodTruckRatings[index];
+						max  = foodTruckRatings[index];
 					}
 
 				}
