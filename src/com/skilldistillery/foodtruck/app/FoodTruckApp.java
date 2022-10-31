@@ -31,13 +31,15 @@ public class FoodTruckApp {
 		int[] foodTruckRatings = new int[5];
 		
 		
+		
+		
 
 		for (int index = 0; index < parked.length; index++) {
 
 			System.out.println("What is the name of the food truck?");
-			String input = scanner.nextLine();
+		//	foodTruckNames[index]= scanner.nextLine();
 
-			
+			String input = foodTruckNames[index] = scanner.nextLine();
 			
 			if (input.equals("quit")) {
 				break;
@@ -48,6 +50,8 @@ public class FoodTruckApp {
 
 			System.out.println("What would you rate the food?");
 			foodTruckRatings[index] = scanner.nextInt();
+			
+			scanner.nextLine();
 
 		}
 
@@ -99,17 +103,20 @@ public class FoodTruckApp {
 				System.out.println("The average rating is: " + average);
 				break;
 			case "3":
-				for (int index = 0; index < foodTruckRatings.length; index++) {
-					max = foodTruckRatings[0];
-					if (foodTruckRatings[index] > max) {
-						max = foodTruckRatings[index];
+				for (int index = 0; index < parked.length; index++) {
+					max = parked[0].getRating();
+					if (parked[index].getRating() > max) {
+						max = parked[index].getRating();
 					}
 
 				}
 				for (int i = 0; i < parked.length; i++) {
-					if (parked[i].getRating() == max);
-					System.out.println(parked[i].toString());
+					if (max == parked[i].getRating()) {
+						System.out.println(parked[i].getRating() + " " + parked[i].getName() + " " + parked[i].getFoodType());
+					}
+					
 				}
+				
 				break;
 			case "4":
 				System.out.println("Goodbye!");
