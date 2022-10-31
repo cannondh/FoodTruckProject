@@ -29,39 +29,36 @@ public class FoodTruckApp {
 		String[] foodTruckTypes = new String[5];
 
 		int[] foodTruckRatings = new int[5];
-
+		
 		
 
-		for (int index = 0; index < foodTruckRatings.length; index++) {
-			
-			
+		for (int index = 0; index < parked.length; index++) {
+
 			System.out.println("What is the name of the food truck?");
 			String input = scanner.nextLine();
-			
 
+			
 			
 			if (input.equals("quit")) {
 				break;
 			}
 
-
 			System.out.println("What is the food type the truck sells?");
 			foodTruckTypes[index] = scanner.nextLine();
 
-			System.out.println("What would you rate the food between 1 and 5?");
+			System.out.println("What would you rate the food?");
 			foodTruckRatings[index] = scanner.nextInt();
 
 		}
 
-		for(int index = 0; index < foodTruckNames.length; index++) {
+		for (int index = 0; index < foodTruckNames.length; index++) {
 			parked[index].setName(foodTruckNames[index]);
-			
+
 			parked[index].setFoodType(foodTruckTypes[index]);
-			
+
 			parked[index].setRating(foodTruckRatings[index]);
-			
+
 		}
-		
 
 		boolean menu = false;
 
@@ -70,8 +67,6 @@ public class FoodTruckApp {
 		int length = foodTruckRatings.length;
 
 		int max = 0;
-		
-		int max2 = 0;
 
 		do {
 
@@ -104,15 +99,17 @@ public class FoodTruckApp {
 				System.out.println("The average rating is: " + average);
 				break;
 			case "3":
-				for (int index = 0; index< parked.length; index++) {
-					max =  parked[0].getRating();
-					if (parked[index].getRating() > max) {
-						max = parked[index].getRating();
+				for (int index = 0; index < foodTruckRatings.length; index++) {
+					max = foodTruckRatings[0];
+					if (foodTruckRatings[index] > max) {
+						max = foodTruckRatings[index];
 					}
 
 				}
-				System.out.println("The highest rating is: " + parked[max].getRating());
-			//	System.out.println(parked[].toString());
+				for (int i = 0; i < parked.length; i++) {
+					if (parked[i].getRating() == max);
+					System.out.println(parked[i].toString());
+				}
 				break;
 			case "4":
 				System.out.println("Goodbye!");
@@ -120,7 +117,8 @@ public class FoodTruckApp {
 
 			}
 		} while (!menu);
+		scanner.close();
 
 	}
 
-}
+} 
