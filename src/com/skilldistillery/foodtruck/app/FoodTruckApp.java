@@ -40,12 +40,12 @@ public class FoodTruckApp {
 			if (input.equals("quit")) {
 				break;
 			}
-
+			
 			System.out.println("What is the food type the truck sells?");
 			foodTruckTypes[index] = scanner.nextLine();
 
 			System.out.println("What would you rate the food? (1 - 5) ");
-			int input2 = foodTruckRatings[index] = scanner.nextInt();
+			foodTruckRatings[index] = scanner.nextInt();
 			
 			
 
